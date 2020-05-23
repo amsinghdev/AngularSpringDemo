@@ -9,7 +9,7 @@ import {WorklistComponent} from './worklist/worklist.component';
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
-//  {path: 'welcome', component: WelcomeComponent},
+ {path: 'welcome', component: WelcomeComponent},
   {path: 'welcome/:name', component: WelcomeComponent},
   {path: 'worklist', component: WorklistComponent},
   {path: '**', component: ErrorComponent}

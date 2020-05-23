@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {AuthenticationService} from '../service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,13 @@ export class LoginComponent implements OnInit {
   password =  '';
   invalidLogin = false;
   errorMessage = 'Invalid Login Credentials !!'
-  constructor(private route: Router) { }
+  constructor(private route: Router,private auth: AuthenticationService) { }
 
   ngOnInit() {
   }
 
   handelLogin() {
-    if (this.userName === 'Admin' && this.password === 'password') {
+    if (this.auth.authentication(this.userName, this.password)) {
       this.route.navigate(['welcome', this.userName]);
       this.invalidLogin = false;
     } else {

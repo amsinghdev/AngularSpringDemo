@@ -10,14 +10,10 @@ import {WorklistComponent} from '../worklist/worklist.component';
 export class WelcomeComponent implements OnInit {
   name = 'Default'
   // Take the parameter from url
-  constructor(private route: ActivatedRoute,  private router: Router) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.name = this.route.snapshot.params['name'];
-  }
-
-  navWorkList() {
-    this.router.navigate(['worklist']);
   }
 
 }
