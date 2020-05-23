@@ -1,1 +1,12 @@
-<p>welcome works!</p>
+<div class="container">
+  <div class="row">
+    <p><span class="text-muted">Welcome {{name}} to the Awesome App !!!</span></p>
+    <div class="col m-3">
+      <h3>Click here to go to </h3><button class="btn-primary text-white" (click)="navWorkList()">WorkList</button>
+    </div>
+    <div class="col m-3">
+      Click here to go to <a routerLink="/worklist">WorkList</a>
+    </div>
+  </div>
+</div>
+

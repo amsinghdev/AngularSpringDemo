@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4 class="text-center font-weight-bold my-5">WorkList</h4>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>No.</th>
+          <th>Details</th>
+          <th>Target</th>
+          <th>Completed Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let work of worklist">
+          <td>{{work.id}}</td>
+          <td>{{work.details}}</td>
+          <td>{{work.target | date}}</td>
+          <td>
+            <p *ngIf="work.isComplected">Yes</p>
+            <p *ngIf="!work.isComplected">No</p>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
