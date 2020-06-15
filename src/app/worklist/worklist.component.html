@@ -6,6 +6,7 @@
         <thead>
         <tr>
           <th>No.</th>
+          <th>Name</th>
           <th>Details</th>
           <th>Target</th>
           <th>Completed Status</th>
@@ -14,11 +15,12 @@
         <tbody>
         <tr *ngFor="let work of worklist">
           <td>{{work.id}}</td>
-          <td>{{work.details}}</td>
-          <td>{{work.target | date}}</td>
+          <td>{{work.name}}</td>
+          <td>{{work.description}}</td>
+          <td>{{work.targetDate | date}}</td>
           <td>
-            <p *ngIf="work.isComplected">Yes</p>
-            <p *ngIf="!work.isComplected">No</p>
+            <p *ngIf="work.done">Yes</p>
+            <p *ngIf="!work.done">No</p>
           </td>
         </tr>
         </tbody>

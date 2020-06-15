@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {WorklistService} from '../service/data/worklist.service';
 
 @Component({
   selector: 'app-worklist',
@@ -6,18 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./worklist.component.css']
 })
 export class WorklistComponent implements OnInit {
-
+  work: any;
   worklist: WorkComponent[];
 
-  constructor() { }
+  constructor(private worklistService: WorklistService) { }
 
   ngOnInit() {
-    this.worklist = [
-      new WorkComponent(1, 'Dancing', new Date(), false),
-      new WorkComponent(2, 'Swimming', new Date(), true),
-      new WorkComponent(3, 'Badminton', new Date(), false),
-      new WorkComponent(4, 'Football', new Date(), true)
-    ];
+    // this.worklist = [
+    //   new WorkComponent(1, 'Dancing', new Date(), false),
+    //   new WorkComponent(2, 'Swimming', new Date(), true),
+    //   new WorkComponent(3, 'Badminton', new Date(), false),
+    //   new WorkComponent(4, 'Football', new Date(), true)
+    // ];
+    this.worklistService.getWorkListService('Admin').subscribe(
+      data => {
+        this.worklist = data;
+      }
+    );
   }
 
 }
@@ -25,9 +31,10 @@ export class WorklistComponent implements OnInit {
 export class WorkComponent {
   constructor(
     public id: number,
-    public details: string,
-    public target: Date,
-    public isComplected: boolean
+    public name: string,
+    public description: string,
+    public targetDate: Date,
+    public done: boolean
   ) {
 
   }

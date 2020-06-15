@@ -3,4 +3,26 @@
     <h1 class="display-4">Welcome {{name}} to the Awesome App !!!</h1>
     <p class="lead">Thank you for using awesome app</p>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <button class="btn btn-primary" (click)="getWelcomeMessage()">Welcome</button>
+      </div>
+      <div class="col-md-11 pl-md-4">
+        <p class="text-muted">{{welcomeMessage}}</p>
+      </div>
+      <div class="col-md-11 pl-md-4">
+        <p class="text-muted">{{errorMessage}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <button class="btn btn-primary" (click)="getWelcomeMessageWithParam()">WelcomeWithParam</button>
+      </div>
+      <div class="col-md-10">
+        <p class="text-muted">{{welcomeMessageWithParam}}</p>
+      </div>
+    </div>
+  </div>
 </div>
