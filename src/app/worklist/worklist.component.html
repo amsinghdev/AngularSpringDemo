@@ -4,17 +4,15 @@
       <h4 class="text-center font-weight-bold my-5">WorkList</h4>
       <table class="table table-striped">
         <thead>
-        <tr>
-          <th>No.</th>
+        <tr class="text-center">
           <th>Name</th>
           <th>Details</th>
           <th>Target</th>
-          <th>Completed Status</th>
+          <th>Completed</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let work of worklist">
-          <td>{{work.id}}</td>
+        <tr *ngFor="let work of worklist" class="text-center">
           <td>{{work.name}}</td>
           <td>{{work.description}}</td>
           <td>{{work.targetDate | date}}</td>
@@ -22,9 +20,25 @@
             <p *ngIf="work.done">Yes</p>
             <p *ngIf="!work.done">No</p>
           </td>
+<!--          <td>-->
+<!--            <button class="btn btn-primary mr-2" (click)="addWork(work)">Add</button>-->
+<!--          </td>-->
+          <td>
+            <button class="btn btn-success" (click)="updateWork(work.id)">Update</button>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteWork(work.id)">Delete</button>
+          </td>
         </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <div class="row">
+    <div class="col-10"></div>
+    <div class="col-2">
+      <button class="btn btn-primary text-center" (click)="addWork()">Add a new Entry</button>
+    </div>
+  </div>
+  <div class="btn alert-success" *ngIf="message">{{this.message}}</div>
 </div>

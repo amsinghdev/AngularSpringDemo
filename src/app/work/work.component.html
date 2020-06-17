@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="flex-row">
+    <h4 class="text-center mt-3">Work Details</h4>
+    <div class="form-group">
+      <label>Work Name</label>
+      <input type="text" class="form-control" [(ngModel)]="work.name">
+    </div>
+    <div class="form-group">
+      <label>Work Details</label>
+      <input type="text" class="form-control" [(ngModel)]="work.description">
+    </div>
+    <div class="form-group">
+      <label for="targetDate">Target Date</label>
+      <input type="date" class="form-control" id="targetDate" [ngModel]="work.targetDate| date:'yyyy-MM-dd'"
+      (ngModelChange)="work.targetDate">
+    </div>
+    <button class="btn btn-primary" (click)="saveWork()">Save</button>
+  </div>
+</div>

@@ -6,6 +6,7 @@ import {ErrorComponent} from './error/error.component';
 import {WorklistComponent} from './worklist/worklist.component';
 import {LogoutComponent} from './logout/logout.component';
 import {RouteGuardService} from './service/route-guard.service';
+import {WorkComponent} from './work/work.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,8 @@ const routes: Routes = [
   {path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService]},
   {path: 'worklist', component: WorklistComponent, canActivate: [RouteGuardService]},
   {path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService]},
+  {path: 'work/:id', component: WorkComponent, canActivate: [RouteGuardService]},
+  {path: 'work', component: WorkComponent, canActivate: [RouteGuardService]},
   {path: '**', component: ErrorComponent}
 ];
 
